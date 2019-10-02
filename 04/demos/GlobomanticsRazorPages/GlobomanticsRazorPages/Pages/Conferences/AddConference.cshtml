@@ -1,0 +1,42 @@
+﻿@page
+@model GlobomanticsRazorPages.Pages.AddConferenceModel
+    <form method="post">
+        <div class="row form-group">
+            <div class="col-md-2 col-md-offset-2">
+                <label asp-for="Conference.Name"></label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Conference.Name" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 col-md-offset-2">
+                <label asp-for="Conference.Location"></label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Conference.Location" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 col-md-offset-2">
+                <label asp-for="Conference.Start"></label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="date" asp-for="Conference.Start" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 col-md-offset-2">
+                <label asp-for="Conference.AttendeeTotal"></label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="number" asp-for="Conference.AttendeeTotal" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-4">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </form>
+

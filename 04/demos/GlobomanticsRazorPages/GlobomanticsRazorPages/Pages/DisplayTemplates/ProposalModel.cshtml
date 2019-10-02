@@ -1,0 +1,22 @@
+﻿@model Models.ProposalModel 
+<tr>
+    <td>@Model.Title</td>
+    <td>@Model.Speaker</td>
+    <td>
+        @if (Model.Approved)
+        {
+            <div>Yes</div>
+        }
+    </td>
+    <td>
+        @if (!Model.Approved)
+        {
+            <a asp-page="ProposalList" 
+               asp-page-handler="approve" 
+               asp-route-proposalId="@Model.Id" 
+               asp-route-conferenceId="@Model.ConferenceId">
+               Approve
+            </a>
+        }
+    </td>
+</tr>

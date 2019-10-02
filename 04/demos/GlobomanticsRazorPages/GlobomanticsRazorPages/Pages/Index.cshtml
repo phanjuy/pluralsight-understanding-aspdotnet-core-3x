@@ -1,0 +1,33 @@
+﻿@page
+@using GlobomanticsRazorPages.Services
+@using GlobomanticsRazorPages.Models
+@inject IConferenceService conferenceService
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Start of event</th>
+                <th>Attendees</th>
+                <th>Actions</th>
+            </tr>
+            @Html.DisplayFor(m => m.Conferences)
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a asp-page="Conferences/AddConference">Add</a>
+    </div>
+</div>
+
+@functions {
+        public IEnumerable<ConferenceModel> Conferences { get; private set; }
+
+        public async Task OnGet()
+        {
+            Conferences = await conferenceService.GetAll();
+        }
+}

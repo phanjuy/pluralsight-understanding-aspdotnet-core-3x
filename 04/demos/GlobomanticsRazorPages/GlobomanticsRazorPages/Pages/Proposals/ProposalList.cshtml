@@ -1,0 +1,17 @@
+﻿@page "{conferenceId:int}"
+@model GlobomanticsRazorPages.Pages.ProposalListModel
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Speaker</th>
+                    <th>Approved</th>
+                    <th>Actions</th>
+                </tr>
+                @Html.DisplayFor(m => m.Proposals)
+            </table>
+            <a asp-page="AddProposal" asp-route-conferenceId="@ViewData["ConferenceId"]">Add</a>
+        </div>
+    </div>
+

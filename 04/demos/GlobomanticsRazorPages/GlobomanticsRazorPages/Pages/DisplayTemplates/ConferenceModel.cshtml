@@ -1,0 +1,11 @@
+﻿@using Microsoft.Extensions.Options
+@model Models.ConferenceModel     
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.Location</td>
+    <td>@Model.Start.ToString("ddd d MMM")</td>
+    <td>@Model.AttendeeTotal</td>
+    <td>
+        <a asp-page="Proposals/ProposalList" asp-route-conferenceId="@Model.Id">Proposals</a>
+    </td>
+</tr>
